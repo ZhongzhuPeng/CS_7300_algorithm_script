@@ -32,16 +32,16 @@ def search(text,strPtn):
 
     position = [] #position matched
     i = 0 # position to be matched in text
-    q = -1 # number of characters matched so far
+    q = 0 # number of characters matched so far
 
     while (i < len(text)):
 
         print('i=%i,q=%i'%(i,q))
-        if text[i] == strPtn[q+1]:
+        if text[i] == strPtn[q+1-1]: # -1 accounts for the 0 index of string
             # mached one character
             q = q + 1
 
-            if q == len(strPtn) - 1:
+            if q == len(strPtn):
                 q = pieTb[q]
                 print('matched at %i'%i)
                 position.append(i-len(strPtn)+1)
@@ -54,3 +54,6 @@ def search(text,strPtn):
             if q == 0:
                 i = i + 1
     return position
+
+# search('aacaabcaabaabc','aabcaab')
+# search('aaabcabc','abc')
