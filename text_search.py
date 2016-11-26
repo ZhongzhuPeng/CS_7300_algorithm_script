@@ -31,7 +31,7 @@ def search(text,strPtn):
     pieTb = makeStateTable(strPtn)
 
     position = [] #position matched
-    i = 0 # position to be matched in text
+    i = 0 # position to be matched in text, index from zero.
     q = 0 # number of characters matched so far
 
     while (i < len(text)):
